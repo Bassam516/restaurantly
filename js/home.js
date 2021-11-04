@@ -163,8 +163,9 @@ $(window).on("load", function () {
             $(this).remove();
         });
     });
-    
+    AOS.init({ once: true });
 });
+
 
 
 
