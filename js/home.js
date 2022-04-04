@@ -27,14 +27,14 @@ closeIcon.addEventListener("click", () => {
 
 /*active navbar link*/
 
-var addClassOnScroll = function () {
-    var windowTop = $(window).scrollTop();
+let addClassOnScroll = function () {
+    let windowTop = $(window).scrollTop();
     $('section[id]').each(function (index, elem) {
-        var offsetTop = $(elem).offset().top;
-        var outerHeight = $(this).outerHeight(true);
+        let offsetTop = $(elem).offset().top;
+        let outerHeight = $(this).outerHeight(true);
 
         if (windowTop > (offsetTop - 50) && windowTop < (offsetTop + outerHeight)) {
-            var elemId = $(elem).attr('id');
+            let elemId = $(elem).attr('id');
             $("nav .navbar-collapse ul li a.active").removeClass('active');
             $("nav .navbar-collapse ul li a[href='#" + elemId + "']").addClass('active');
         }
@@ -115,7 +115,7 @@ $(document).ready(function () {
 });
 
 /*testimonials swiper*/
-var swiper = new Swiper(".mySwiper", {
+let swiper = new Swiper(".mySwiper", {
     slidesPerView: window.innerWidth<=991 ? 1 : 3,
     loop: true,
     loopFillGroupWithBlank: true,
@@ -129,13 +129,24 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 /*gallery swiper*/
-
-var swiper = new Swiper(".mySwiper2", {
-    loop: true,
-    loopFillGroupWithBlank: true,
+let swiper3 = new Swiper(".mySwiper3",{
+    spaceBetween: 0,
+    slidesPerView: 1,
+    //freeMode: true,
+});
+let swiper2 = new Swiper(".mySwiper2", {
+    //loop: true,
+    //loopFillGroupWithBlank: true,
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
+    },
+    keyboard: {
+        enabled: true,
+        onlyInViewport: false,
+    },
+    thumbs: {
+        swiper: swiper3,
     },
 });
 
@@ -151,6 +162,7 @@ $(function () {
 
     $("#close-swiper").on('click', () => {
         $(".gallery .gallery-swiper").fadeOut(200, "swing");
+       // $(".gallery .photos ul").css("transform", "translate3d(0px,0px,0px)");
         document.body.style.overflowY = "scroll";
 
     });

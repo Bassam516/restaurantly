@@ -628,6 +628,12 @@ body {
 .gallery .head{
     padding:50px;
 }
+.gallery .photos{
+    padding: 0;
+}
+.gallery .photos ul{
+    margin: 0;
+}
 .gallery .photos ul li{
     padding: 0;
     border: 2px solid #333333;
