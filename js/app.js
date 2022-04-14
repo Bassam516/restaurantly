@@ -135,8 +135,7 @@ let swiper3 = new Swiper(".mySwiper3",{
     //freeMode: true,
 });
 let swiper2 = new Swiper(".mySwiper2", {
-    //loop: true,
-    //loopFillGroupWithBlank: true,
+    loop: true,
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -177,8 +176,6 @@ $(window).on("load", function () {
     });
     AOS.init({ once: true });
 });
-
-
 
 
 
